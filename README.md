@@ -1,8 +1,46 @@
-# Smart Resume Matcher with AI-Powered HR Messaging
+# 💼 Resume Matcher & ATS Compatibility Checker
+## 🌐 Live Demo
 
-This Streamlit-based web application helps job seekers match their resume against a job posting, calculate an ATS compatibility score, and generate a professional job application email. It extracts resume data from a PDF (up to 200MB) and job details from a provided URL using `PyPDF2` and `WebBaseLoader`.
-Using NLP techniques with `nltk` and `scikit-learn`, it computes a cosine similarity score (e.g., 36.28%) to determine ATS compatibility. The app leverages `langchain-groq` to interact with the Grok API for JSON extraction and email generation. Features include resume upload, job URL input, JSON output of extracted data, ATS score display, and email generation. To set up, clone the repository (`git clone <repository-url>`), navigate to the folder (`cd <repository-folder>`), and install dependencies (`pip install -r requirements.txt`). Required packages are `streamlit`, `PyPDF2`, `langchain-groq`, `langchain-community`, `beautifulsoup4`, `nltk`, and `scikit-learn`. 
-Set your Grok API key securely using environment variables (`export GROQ_API_KEY='your-api-key'`) or Streamlit secrets in `.streamlit/secrets.toml` ([secrets] GROQ_API_KEY = "your-api-key"). Run the app with `streamlit run app.py`, then access it at `http://localhost:8501`. 
-Upload a resume PDF, enter a job posting URL (e.g., https://amazon.jobs/en/jobs/2979106/applied-scientist-i-amazon-payments-team), and click "Process Resume and Job Posting" to view extracted JSONs, ATS score, and a generated email. The screenshot below shows the interface with a drag-and-drop resume upload area and a job description URL input field: 
-![Screenshot 2025-06-07 205024](https://github.com/user-attachments/assets/9d2be5a3-93aa-4ccb-8002-4c4f1a0c5b9c)
-The project structure includes `app.py` (main script), `requirements.txt` (dependencies), and `images/` (for the screenshot). Note that the app requires a valid Grok API key, assumes the job URL is accessible, and calculates ATS scores using text preprocessing and cosine similarity. Future dates in resumes (e.g., April 2025) may need handling, and the API key should be secured. This project is licensed under the MIT License; see the `LICENSE` file for details.
+👉 [Click here to try the live app](https://resume-tracker-847m.onrender.com/)
+
+
+A **Streamlit-based web application** that helps job seekers:
+
+- Match their **resume** to a **job posting**
+- Calculate an **ATS (Applicant Tracking System) compatibility score**
+- Generate a **professional job application email**
+
+---
+
+## 🚀 Features
+
+- ✅ **Resume Upload**: Upload PDF resumes (up to 200MB)  
+- 🌐 **Job Description Input**: Enter a job posting URL  
+- 🧠 **Text Extraction**:
+  - Resume: via **PyPDF2**
+  - Job Posting: via **WebBaseLoader** (LangChain + BeautifulSoup4)
+- 📊 **ATS Score Calculation**:
+  - Uses **NLTK** & **scikit-learn** for NLP
+  - Calculates **cosine similarity** between resume and job text (e.g., 36.28%)
+    
+- 🤖 **Langchain-Groq Integration**:
+  - Interacts with **Grok API** via **langchain-groq**
+  - Extracts structured **JSON** data
+  - Generates **professional job application email**
+    
+- 📄 **Output Includes**:
+  - Extracted Resume & Job Description JSONs
+  - ATS compatibility score
+  - AI-generated email text
+ 
+  ![Screenshot 2025-06-07 205024](https://github.com/user-attachments/assets/0d9d29bd-d2a3-4525-bee9-0eec3b01ce6e)
+
+    
+- 🖼️ **UI Highlights**:
+  - Drag-and-drop resume upload
+  - Job URL input field
+  - Process button with real-time display of results
+
+---
+
+
